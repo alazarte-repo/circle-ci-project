@@ -1,5 +1,6 @@
 version: 2.1
 jobs:
+  say-hello-workflow:
     build:
       docker:
         - image: circleci/buildpack-deps:stretch
@@ -35,6 +36,7 @@ jobs:
 workflows:
   hello-workflow:
     jobs:
+    - say-hello-workflow
       - build:
           filters:
             branches:
