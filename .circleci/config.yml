@@ -5,6 +5,7 @@ jobs:
         - image: circleci/buildpack-deps:stretch
       environment:
         IMAGE_NAME: pablokbs/hola-docker
+        
       working_directory: ~/app
       steps:
         - checkout
@@ -18,8 +19,8 @@ jobs:
             command: |
               echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
               docker tag $IMAGE_NAME:latest $IMAGE_NAME:$CIRCLE_SHA1
-              echo docker push -u "$DOCKER_USER"/$IMAGE_NAME:latest
-              echo docker push -u "$DOCKER_USER"/$IMAGE_NAME:$CIRCLE_SHA1
+              echo docker push -u "$DOCKER_USER"/"$DOCKER_IMAGE":latest
+              echo docker push -u "$DOCKER_USER"/"$DOCKER_IMAGE":$CIRCLE_SHA1
         - run:
             name: Install envsubst
             command: |
