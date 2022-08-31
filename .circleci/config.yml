@@ -4,7 +4,8 @@ on:
     push:
       branches:
         main
-
+      paths:
+      - '.circleci/kube/'
 jobs:
   say-hello-workflow:
       docker:
