@@ -17,7 +17,7 @@ jobs:
             name: Push Docker Image
             command: |
               echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-              docker tag $DOCKER_IMAGE:$CIRCLE_SHA1
+              docker tag $IMAGE_NAME:latest $DOCKER_IMAGE:$CIRCLE_SHA1 
               docker push $DOCKER_IMAGE:$CIRCLE_SHA1
         - run:
             name: Install envsubst
