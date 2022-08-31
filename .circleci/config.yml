@@ -4,7 +4,7 @@ jobs:
       docker:
         - image: circleci/buildpack-deps:stretch
       environment:
-        IMAGE_NAME: pablokbs/hola-docker
+        IMAGE_NAME: adriandockerimg/circle-ci-test
         
       working_directory: ~/app
       steps:
