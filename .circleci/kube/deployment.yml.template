@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: hola-docker
-          image: pablokbs/hola-docker:$COMMIT_SHA1
+          image: adriandockerimg/circle-ci-test:$COMMIT_SHA1
           ports:
             - containerPort: 80
               name: http
