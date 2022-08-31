@@ -36,7 +36,7 @@ jobs:
 workflows:
   hello-workflow:
     jobs:
-    - say-hello-workflow
+    - say-hello-workflow:
       - build:
           filters:
             branches:
